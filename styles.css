@@ -11,6 +11,7 @@ body{
   /* background-color: #000; */
   max-width: 100vw;
   max-height: 100vh;
+  position: relative;
 }
 .center-elements{
   display: flex;
@@ -55,15 +56,15 @@ li{
 }
 .btn{
   color: white;
-  /* font-weight: bold; */
+  font-weight: 500;
   font-size: .9rem;
   border: none;
   border-radius: 4px;
   background-color: #1a73e8;
-  padding: .6rem 1.6rem;
+  padding: .6em 1.6em;
 }
 .btn:hover, .btn:active, .btn:focus{
-  box-shadow: inset 0 0 1rem 1rem #ffffff18;
+  box-shadow: inset 0 0 1em 1em #ffffff18;
   cursor: pointer;
 }
 
@@ -100,9 +101,6 @@ li{
 .hide{
   visibility: collapse;
 }
-.show{
-  visibility: visible;
-}
 .app-link{
   border-radius: 10px;
   width: 100%;
@@ -136,7 +134,7 @@ main{
 }
 .container{
   display: flex;
-  width: 100%;
+  width: 65%;
   max-width: 600px;
   margin: 0 auto;
   flex-direction: column;
@@ -153,10 +151,10 @@ main{
   background-color: #ffffff;
   overflow: hidden;
   width: 100%;
-  height: 3rem;
+  height: 3em;
   border-radius: 50px;
-  margin: 0 auto 2rem;
-  padding: 5px 20px;
+  margin: 0 auto 2em;
+  padding: .4em 1.25em;
   box-shadow: 1px 1px 2px 1px #00000020;
 }
 .search-icon, .mic-icon{
@@ -167,7 +165,7 @@ main{
   width: 100%;
   height: 100%;
   border: none;
-  font-size: 1rem;
+  font-size: 1em;
 }
 .no-border:active, .no-border:focus, .no-border:hover{
   border: none;
@@ -194,10 +192,11 @@ main{
 }
 .footer{
   background-color: #00000010;
-  width: 100vw;
-  position: fixed;
+  width: 100%;
+  position: absolute;
   bottom: 0;
   display: flex;
+  /* align-self: baseline; */
 }
 .footer ul{
   width: 98%;
@@ -212,4 +211,39 @@ main{
 .footer span{
   padding: 0 1rem;
   color: #00000088;
+}
+@media(max-width: 850px){
+  .footer ul{
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .footer li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 0 auto; */
+  }
+}
+
+@media(max-width: 550px){
+  .container{
+    width: 100%;
+    max-width: 370px;
+  }
+  .container .logo{
+    min-width: 180px;
+  }
+}
+@media (orientation: landscape) ,(max-height: 850px){
+  body{
+    min-height: 120vh;
+    max-height: 130vh;
+    position: relative;
+  }
+  .footer{
+    position: absolute;
+    bottom: 0;
+  }
 }
